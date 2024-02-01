@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>create-car</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="py-auto">
+  <h1 class="text-center font-bold mt-10">Rent A Car</h1>
+  <ion-list class="mt-10" [formGroup]="addCarForm">
+
+    <ion-item>
+      <ion-input label="Color ID" labelPlacement="stacked" placeholder="Enter Color ID" formControlName="colorId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Model ID" labelPlacement="stacked" placeholder="Enter Model ID" formControlName="modelId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Rental Branch ID" labelPlacement="stacked" placeholder="Enter Rental Branch ID" formControlName="rentalBranchId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Car State" labelPlacement="stacked" placeholder="Enter Car State" formControlName="carState" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Kilometer" labelPlacement="stacked" placeholder="Enter Kilometer" formControlName="kilometer" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Model Year" labelPlacement="stacked" placeholder="Enter Model Year" formControlName="modelYear" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Plate" labelPlacement="stacked" placeholder="Enter Plate" formControlName="plate"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input label="Min Findeks Credit Rate" labelPlacement="stacked" placeholder="Enter Min Findeks Credit Rate" formControlName="minFindeksCreditRate" type="number"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-button expand="full" (click)="goToCreateModel()"> Add Car Model</ion-button>
+  <ion-button expand="full" (click)="createcar()">Add Specs</ion-button>
+
+</ion-content>

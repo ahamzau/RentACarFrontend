@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Car Details</ion-title>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="car && model && color && fuel && transmission && brand">
+    <ion-card-header>
+      <ion-card-title>{{ brand.name }} {{ model.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Renk</ion-label>
+        <ion-note slot="end">{{ color.name }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Model Yılı</ion-label>
+        <ion-note slot="end">{{ car.modelYear }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Plaka</ion-label>
+        <ion-note slot="end">{{ car.plate }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Kilometre</ion-label>
+        <ion-note slot="end">{{ car.kilometer }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Vites tipi</ion-label>
+        <ion-note slot="end">{{ transmission.name }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Günlük kiralama bedeli</ion-label>
+        <ion-note slot="end">{{ model.dailyPrice }}</ion-note>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

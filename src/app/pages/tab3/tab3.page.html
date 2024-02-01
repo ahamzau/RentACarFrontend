@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profil Sayfası</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>İsim:</ion-label>
+      <ion-text>{{ user.firstName }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Soyisim:</ion-label>
+      <ion-text>{{ user.lastName }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>E-Mail:</ion-label>
+      <ion-text>{{ user.email }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Durum:</ion-label>
+      <ion-text>{{ user.status }}</ion-text>
+    </ion-item>
+    <!-- Diğer kullanıcı bilgilerini burada gösterebilirsiniz -->
+  </ion-list>
+</ion-content>

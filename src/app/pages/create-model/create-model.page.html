@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>create-model</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="py-auto">
+  <h1 class="text-center font-bold mt-10">Rent A Car</h1>
+  <ion-list class="mt-10" [formGroup]="addModelForm">
+
+    <ion-item>
+      <ion-input label="Model Name" labelPlacement="stacked" placeholder="Enter Model Name" formControlName="name" type="string"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Daily Price" labelPlacement="stacked" placeholder="Enter Daily Price" formControlName="dailyPrice" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Brand ID" labelPlacement="stacked" placeholder="Enter Brand ID" formControlName="brandId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="transmissionId" labelPlacement="stacked" placeholder="Enter transmissionId" formControlName="transmissionId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="fuelId" labelPlacement="stacked" placeholder="Enter fuelId" formControlName="fuelId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="imageUrl" labelPlacement="stacked" placeholder="Enter imageUrl" formControlName="imageUrl" type="string"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-button expand="full" (click)="createmodel()">Add Car Model</ion-button>
+  <ion-button expand="full" (click)="goToCreateCar()">Add Specs</ion-button>
+</ion-content>

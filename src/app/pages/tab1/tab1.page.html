@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Araçlar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
+
+  <!--<ion-list *ngIf="paginatedCarResult">
+    <ion-card *ngFor="let car of paginatedCarResult.items">
+      &lt;!&ndash; <ion-img [src]="car.images[0]"/> &ndash;&gt;
+      <ion-card-header>
+        <ion-card-title>{{car.brandName}}</ion-card-title>
+        <ion-card-subtitle>{{car.modelYear}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="flex items-center justify-between">
+          <div>
+            {{car.dailyPrice | turkishCurrency}}
+          </div>
+          <ion-icon name="heart-outline" class="text-4xl" (click)="favorite(car.id)"></ion-icon>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>-->
+
+  <ion-list *ngIf="paginatedCarResult && paginatedModelResult && paginatedColorResult">
+    <ion-card *ngFor="let car of paginatedModelResult.items">
+      <!-- <ion-img [src]="car.images[0]"/> -->
+      <ion-img [src]="car.imageUrl"/>
+      <ion-card-header>
+        <ion-card-title>{{car.brandName}}</ion-card-title>
+        <ion-card-subtitle>{{car.name}}</ion-card-subtitle>
+        <ion-card-subtitle>{{car.fuelName}}</ion-card-subtitle>
+        <ion-card-subtitle>{{car.transmissionName}}</ion-card-subtitle>
+        <!--<ion-card-subtitle>{{getColorName(car.id) | async}}</ion-card-subtitle>-->
+
+
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="flex items-center justify-between">
+          <div>
+            {{car.dailyPrice | turkishCurrency}}
+          </div>
+          <div>
+            <ion-icon name="receipt-outline" class="text-4xl" (click)="goToCarDetails(car.id)"></ion-icon>
+            <ion-icon name="cash-outline" class="text-4xl" (click)="goToBuy(car.id)"></ion-icon>
+            <ion-icon name="heart-outline" class="text-4xl" (click)="favorite(car)"></ion-icon>
+            <ion-icon name="trash-outline" class="text-4xl text-red-600" (click)="delete(car.id)"></ion-icon>
+          </div>
+        </div>
+        <ion-img> src[]= </ion-img>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="goToCreateModel()">
+    <ion-fab-button>
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
